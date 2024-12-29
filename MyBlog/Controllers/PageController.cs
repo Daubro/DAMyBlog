@@ -1,5 +1,4 @@
 ﻿using MyBlog.Data;
-using MyBlog.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyBlog.Data;
@@ -18,41 +17,20 @@ namespace FineBlog.Controllers
 
         public async Task<IActionResult> About()
         {
-            var page = await _context.Pages!.FirstOrDefaultAsync(x => x.Slug == "about");
-            var vm = new PageVM()
-            {
-                Title = page!.Title,
-                ShortDescription = page.ShortDescription,
-                Description = page.Description,
-                ThumbnailUrl = page.ThumbnailUrl,
-            };
-            return View(vm);
+           
+            return View();
         }
 
         public async Task<IActionResult> Contact()
         {
-            var page = await _context.Pages!.FirstOrDefaultAsync(x => x.Slug == "contact");
-            var vm = new PageVM()
-            {
-                Title = page!.Title,
-                ShortDescription = page.ShortDescription,
-                Description = page.Description,
-                ThumbnailUrl = page.ThumbnailUrl,
-            };
-            return View(vm);
+            
+            return View();
         }
 
         public async Task<IActionResult> PrivacyPolicy()
         {
-            var page = await _context.Pages!.FirstOrDefaultAsync(x => x.Slug == "privacy");
-            var vm = new PageVM()
-            {
-                Title = page!.Title,
-                ShortDescription = page.ShortDescription,
-                Description = page.Description,
-                ThumbnailUrl = page.ThumbnailUrl,
-            };
-            return View(vm);
+            
+            return View();
         }
     }
 }
