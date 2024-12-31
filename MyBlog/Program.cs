@@ -2,11 +2,8 @@ using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
 using MyBlog.Data;
 using MyBlog.Models;
-
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using MyBlog.Data;
-using MyBlog.Models;
 using MyBlog.Utilites;
 
 var builder = WebApplication.CreateBuilder(args);
