@@ -1,9 +1,9 @@
 using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
-using MyBlog.Data;
-using MyBlog.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MyBlog.Data;
+using MyBlog.Models;
 using MyBlog.Utilites;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -57,8 +57,6 @@ app.MapControllerRoute(
 
 app.Run();
 
-
-
 void DataSeeding()
 {
     using (var scope = app.Services.CreateScope())
@@ -67,6 +65,4 @@ void DataSeeding()
         DbInitialize.Initialize();
     }
 }
-
-
 

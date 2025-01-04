@@ -7,6 +7,7 @@ using MyBlog.Data;
 using MyBlog.Models;
 using MyBlog.Utilites;
 using MyBlog.ViewModels;
+using X.PagedList.Extensions;
 
 namespace MyBlog.Areas.Admin.Controllers
 {
@@ -57,7 +58,7 @@ namespace MyBlog.Areas.Admin.Controllers
             int pageSize = 5;
             int pageNumber = (page ?? 1);
 
-            return View(listOfPostsVM);
+            return View(listOfPostsVM.OrderByDescending(x => x.CreatedDate).ToPagedList(pageNumber, pageSize));
         }
         [HttpGet]
         public IActionResult Create()
